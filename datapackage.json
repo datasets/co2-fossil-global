@@ -1,0 +1,83 @@
+{
+  "licenses": [
+    {
+      "name": "ODC-PDDL-1.0",
+      "path": "http://opendatacommons.org/licenses/pddl/",
+      "title": "Open Data Commons Public Domain Dedication and License v1.0"
+    }
+  ],
+  "name": "co2-fossil-global",
+  "resources": [
+    {
+      "name": "global",
+      "path": "global.csv",
+      "schema": {
+        "fields": [
+          {
+            "description": "Year",
+            "name": "Year",
+            "type": "year"
+          },
+          {
+            "description": "Total carbon emissions from fossil fuel consumption and cement production (million metric tons of C)",
+            "name": "Total",
+            "type": "number"
+          },
+          {
+            "description": "Carbon emissions from gas fuel consumption",
+            "name": "Gas Fuel",
+            "type": "number"
+          },
+          {
+            "description": "Carbon emissions from liquid fuel consumption",
+            "name": "Liquid Fuel",
+            "type": "number"
+          },
+          {
+            "description": "Carbon emissions from solid fuel consumption",
+            "name": "Solid Fuel",
+            "type": "number"
+          },
+          {
+            "description": "Carbon emissions from cement production",
+            "name": "Cement",
+            "type": "number"
+          },
+          {
+            "description": "Carbon emissions from gas flaring",
+            "name": "Gas Flaring",
+            "type": "number"
+          },
+          {
+            "description": "Per capita carbon emissions (metric tons of carbon; after 1949 only)",
+            "name": "Per Capita",
+            "type": "number"
+          }
+        ]
+      }
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDIAC",
+      "path": "http://cdiac.esd.ornl.gov/ftp/ndp030/CSV-FILES/global.1751_2010.csv",
+      "title": "CDIAC"
+    }
+  ],
+  "title": "Global CO2 Emissions from Fossil Fuels since 1751",
+  "views": [
+    {
+      "name": "graph",
+      "title": "Global CO2 Emissions from Fossil Fuels since 1751",
+      "specType": "simple",
+      "spec": {
+        "type": "lines-and-points",
+        "group": "Year",
+        "series": [
+          "Total",
+          "Solid Fuel"
+        ]
+      }
+    }
+  ]
+}
