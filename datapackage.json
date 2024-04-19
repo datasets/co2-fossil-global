@@ -69,6 +69,7 @@
     {
       "name": "graph",
       "title": "Global CO2 Emissions from Fossil Fuels since 1751",
+      "resources": ["global"],
       "specType": "simple",
       "spec": {
         "type": "lines-and-points",
