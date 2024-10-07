@@ -79,29 +79,6 @@
           "Solid Fuel"
         ]
       }
-    },
-    {
-      "name": "growth-rate-per-capita",
-      "title": "Global growth rate of CO2 Emissions per capita",
-      "resources": [
-        {
-          "name": "global",
-          "transform": [
-            {
-              "type": "filter",
-              "expression": "data['Year'] >= 1950"
-            }
-          ]
-        }
-      ],
-      "specType": "simple",
-      "spec": {
-        "type": "bar",
-        "group": "Year",
-        "series": [
-          "Per Capita"
-        ]
-      }
     }
   ]
 }
