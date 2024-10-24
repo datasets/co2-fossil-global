@@ -1,3 +1,5 @@
+<a href="https://datahub.io/core/co2-fossil-global"><img src="https://badgen.net/badge/icon/View%20on%20datahub.io/orange?icon=https://datahub.io/datahub-cube-badge-icon.svg&label&scale=1.25)" alt="badge" /></a>
+
 Global CO2 Emissions from fossil-fuels annually since 1751 till 2014. 
 
 ## Data
