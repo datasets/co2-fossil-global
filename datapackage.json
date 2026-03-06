@@ -1,4 +1,5 @@
 {
+  "profile": "data-package",
   "licenses": [
     {
       "name": "ODC-PDDL-1.0",
@@ -11,6 +12,10 @@
     {
       "name": "global",
       "path": "global.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "profile": "tabular-data-resource",
+      "encoding": "utf-8",
       "schema": {
         "fields": [
           {
@@ -53,6 +58,9 @@
             "name": "Per Capita",
             "type": "number"
           }
+        ],
+        "missingValues": [
+          ""
         ]
       }
     }
@@ -69,16 +77,13 @@
     {
       "name": "graph",
       "title": "Global CO2 Emissions from Fossil Fuels since 1751",
-      "resources": [
-        "global"
-      ],
+      "resourceName": "global",
       "specType": "simple",
       "spec": {
-        "type": "lines-and-points",
+        "type": "line",
         "group": "Year",
         "series": [
-          "Total",
-          "Solid Fuel"
+          "Total"
         ]
       }
     }
