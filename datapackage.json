@@ -10,6 +10,19 @@
   "name": "co2-fossil-global",
   "resources": [
     {
+      "name": "fuel-breakdown",
+      "path": "data/fuel-breakdown.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "schema": {
+        "fields": [
+          { "name": "year", "type": "integer" },
+          { "name": "fuel", "type": "string" },
+          { "name": "emissions_mt", "type": "number", "description": "CO₂ emissions in megatonnes" }
+        ]
+      }
+    },
+    {
       "name": "global",
       "path": "global.csv",
       "format": "csv",
@@ -74,6 +87,27 @@
   ],
   "title": "Global CO2 Emissions from Fossil Fuels since 1751",
   "views": [
+    {
+      "name": "fuel-breakdown",
+      "title": "Global CO₂ Emissions by Fuel Type (1900–2020)",
+      "description": "Fossil fuel CO₂ emissions split by source: solid fuels (coal) dominated through the mid-20th century, then liquid fuels (oil) surged with post-war growth, and gas fuels rose steadily. Cement has grown sharply since 2000, driven by Chinese construction. Total emissions have risen 20× since 1900.",
+      "resources": ["fuel-breakdown"],
+      "specType": "plot",
+      "spec": {
+        "height": 420,
+        "marginLeft": 65,
+        "x": { "label": "Year", "tickFormat": ".0f" },
+        "y": { "label": "CO₂ Emissions (Mt)", "grid": true },
+        "color": { "legend": true },
+        "marks": [
+          {
+            "type": "line",
+            "x": "year", "y": "emissions_mt", "stroke": "fuel",
+            "strokeWidth": 2, "tip": true
+          }
+        ]
+      }
+    },
     {
       "name": "graph",
       "title": "Global CO2 Emissions from Fossil Fuels since 1751",
