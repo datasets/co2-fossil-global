@@ -24,7 +24,7 @@ GCP_URL = "https://zenodo.org/records/17417124/files/GCB2025v15_MtCO2_flat.csv?d
 CO2_TO_C = 12 / 44
 
 REPO_ROOT = Path(__file__).parent.parent
-GLOBAL_CSV = REPO_ROOT / "global.csv"
+GLOBAL_CSV = REPO_ROOT / "data" / "global.csv"
 FUEL_BREAKDOWN_CSV = REPO_ROOT / "data" / "fuel-breakdown.csv"
 
 # Fuel columns in GCP → display names used in fuel-breakdown.csv

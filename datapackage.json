@@ -24,7 +24,7 @@
     },
     {
       "name": "global",
-      "path": "global.csv",
+      "path": "data/global.csv",
       "format": "csv",
       "mediatype": "text/csv",
       "profile": "tabular-data-resource",
