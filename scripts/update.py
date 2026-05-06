@@ -83,7 +83,7 @@ def fmt(v, decimals=0):
 
 def write_global_csv(rows):
     with open(GLOBAL_CSV, "w", newline="") as f:
-        writer = csv.writer(f)
+        writer = csv.writer(f, lineterminator="\n")
         writer.writerow(["Year", "Total", "Gas Fuel", "Liquid Fuel", "Solid Fuel",
                          "Cement", "Gas Flaring", "Per Capita"])
         for r in rows:
@@ -106,7 +106,7 @@ def write_global_csv(rows):
 
 def write_fuel_breakdown_csv(rows):
     with open(FUEL_BREAKDOWN_CSV, "w", newline="") as f:
-        writer = csv.writer(f)
+        writer = csv.writer(f, lineterminator="\n")
         writer.writerow(["year", "fuel", "emissions_mt"])
         for r in rows:
             for gcp_col, label in FUEL_COLS.items():
