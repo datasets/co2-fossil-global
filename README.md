@@ -1,31 +1,35 @@
 <a className="gh-badge" href="https://datahub.io/core/co2-fossil-global"><img src="https://badgen.net/badge/icon/View%20on%20datahub.io/orange?icon=https://datahub.io/datahub-cube-badge-icon.svg&label&scale=1.25" alt="badge" /></a>
 
-Global CO2 Emissions from fossil-fuels annually since 1751 till 2014. 
+Global CO2 emissions from fossil fuels annually since 1750 through 2024.
 
 ## Data
 
-Data comes from the
-[Carbon Dioxide Information Analysis Center (CDIAC)](http://cdiac.esd.ornl.gov/).
+Data comes from the [Global Carbon Project (GCP)](https://globalcarbonproject.org/) annual Global Carbon Budget release.
 
-Original csv: http://cdiac.ess-dive.lbl.gov/ftp/ndp030/CSV-FILES/global.1751_2014.csv
+- **Source:** Andrew, R. M., & Peters, G. P. (2025). *The Global Carbon Project's fossil CO2 emissions dataset* (2025v15). Zenodo. https://doi.org/10.5281/zenodo.17417124
+- **Coverage:** 1750–2024 (updated annually each December after the GCP release)
+- **Units:** `global.csv` values are in million metric tonnes of Carbon (MtC). `data/fuel-breakdown.csv` values are in million metric tonnes of CO2 (MtCO2).
 
-## Preparation
+## Updating
 
-The data was prepared in this Tabularum project:
-http://explorer.okfnlabs.org/#rgrp/9452691
+Run the update script to fetch the latest GCP data:
+
+```bash
+python3 scripts/update.py
+```
+
+This fetches the GCP flat CSV from Zenodo, filters for global aggregates, converts units, and overwrites `global.csv` and `data/fuel-breakdown.csv`. A GitHub Actions workflow runs this automatically each December.
+
+To update to a specific GCP release, edit the `GCP_URL` constant in `scripts/update.py`.
 
 ## Citation
 
-Please cite as:
+Please cite the upstream source as:
 
-> Boden, T.A., G. Marland, and R.J. Andres. 2013. Global, Regional, and
-> National Fossil-Fuel CO2 Emissions. Carbon Dioxide Information Analysis
-> Center, Oak Ridge National Laboratory, U.S. Department of Energy, Oak Ridge,
-> Tenn., U.S.A. doi 10.3334/CDIAC/00001_V2013
+> Andrew, R. M., & Peters, G. P. (2025). The Global Carbon Project's fossil CO2 emissions dataset (2025v15). Zenodo. https://doi.org/10.5281/zenodo.17417124
 
 ## License
 
 This Data Package is licensed by its maintainers under the [Public Domain Dedication and License (PDDL)](http://opendatacommons.org/licenses/pddl/1.0/).
 
-
-
+Upstream data is licensed under [Creative Commons Attribution 4.0 International (CC-BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
